@@ -3,3 +3,4 @@ cache
 temp*
 go-lostfilm-rss*
 Taskfile.yml
+.idea

@@ -69,7 +69,7 @@ func loadConfig() {
 		"Игнорируемые качества, через запятую (например, \"SD,MP4\")")
 	flag.StringVar(&config.Port, "port", os.Getenv("PORT"), "Порт для HTTP сервера")
 	flag.StringVar(&config.BaseURL, "base_url", os.Getenv("BASE_URL"),
-		"Базовый URL для генерации локальных ссылок (например, http://your_domain.com:8080)")
+		"Базовый URL для генерации локальных ссылок (например, http://localhost:80)")
 
 	flag.Parse()
 
