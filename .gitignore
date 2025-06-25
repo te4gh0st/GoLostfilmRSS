@@ -1,0 +1,5 @@
+cache
+*.env
+temp*
+go-lostfilm-rss*
+Taskfile.yml

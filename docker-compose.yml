@@ -1,0 +1,22 @@
+services:
+  lostfilm-rss-proxy:
+    build: .
+    container_name: lostfilm-rss-proxy
+    restart: unless-stopped
+    ports:
+      - "8080:80" # Порт для доступа к RSS и торрентам. Измените 8080 на нужный, если занят.
+    environment:
+      # ОБЯЗАТЕЛЬНЫЕ ПАРАМЕТРЫ:
+      - REMOTE_RSS=УДАЛЕННЫЙ_RSS_URL # Пример: "https://insearch.site/rssdd.xml"
+      - TRACKER_ID=ВАШ_TRACKER_ID
+      - COOKIE_UID=ВАШ_UID              # Ваш UID с lostfilm.tv
+      - COOKIE_USESS=ВАШ_USESS          # Ваш USESS (указан в окне insearch.site, внизу слева от значка RSS)
+      # НЕОБЯЗАТЕЛЬНЫЕ ПАРАМЕТРЫ:
+      #- PORT=80 # Порт, на котором будет работать HTTP сервер внутри контейнера (должен совпадать с EXPOSE в Dockerfile)
+      - BASE_URL=http://ВАШ_IP_ИЛИ_ДОМЕН:8080 # Базовый URL для генерации локальных ссылок (ВАЖНО для внешнего доступа)
+      - IGNORE_QUALITY=SD,MP4           # Игнорируемые качества, через запятую (например, SD,MP4,1080p)
+#    volumes:
+#      - lostfilm-cache:/app/cache # хранилище для RSS и торрентов
+
+#volumes:
+#  lostfilm-cache:
