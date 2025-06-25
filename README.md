@@ -93,7 +93,7 @@ docker compose up -d
   > ./go-lostfilm-rss -h
   
   -base_url string
-        Базовый URL для генерации локальных ссылок (например, http://your_domain.com:8080)
+        Базовый URL для генерации локальных ссылок (например, http://localhost:80)
   -ignore_quality string
         Игнорируемые качества, через запятую (например, "SD,MP4")
   -port string
